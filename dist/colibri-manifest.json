@@ -1,0 +1,1675 @@
+{
+  "metadata": {
+    "colibri_version": "0.2.5",
+    "generated_at": "2025-09-08T13:43:58Z",
+    "adapter_type": "databricks",
+    "dbt_version": "1.10.9",
+    "dbt_schema_version": "https://schemas.getdbt.com/dbt/manifest/v12.json",
+    "dbt_invocation_id": "cb4a6179-5684-474a-85eb-c5e26ddaa23f",
+    "dbt_project_name": "bakehouse",
+    "dbt_project_id": "5996bf50c3d67c305e0cdb56512f77bd"
+  },
+  "nodes": {
+    "source.bakehouse.bakehouse.sales_customers": {
+      "id": "source.bakehouse.bakehouse.sales_customers",
+      "name": "sales_customers",
+      "fullName": "source.bakehouse.bakehouse.sales_customers",
+      "nodeType": "source",
+      "materialized": "unknown",
+      "modelType": "unknown",
+      "database": "samples",
+      "schema": "bakehouse",
+      "path": "models\\bronze\\bakehouse\\bakehouse.yml",
+      "description": "",
+      "contractEnforced": null,
+      "rawCode": null,
+      "compiledCode": null,
+      "refs": [],
+      "columns": {
+        "customerid": {
+          "columnName": "customerid",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "first_name": {
+          "columnName": "first_name",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "last_name": {
+          "columnName": "last_name",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "email_address": {
+          "columnName": "email_address",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "phone_number": {
+          "columnName": "phone_number",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "address": {
+          "columnName": "address",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "city": {
+          "columnName": "city",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "state": {
+          "columnName": "state",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "country": {
+          "columnName": "country",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "continent": {
+          "columnName": "continent",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "postal_zip_code": {
+          "columnName": "postal_zip_code",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "gender": {
+          "columnName": "gender",
+          "hasLineage": true,
+          "dataType": "string"
+        }
+      }
+    },
+    "model.bakehouse.bh_sales_customers": {
+      "id": "model.bakehouse.bh_sales_customers",
+      "name": "bh_sales_customers",
+      "fullName": "model.bakehouse.bh_sales_customers",
+      "nodeType": "model",
+      "materialized": "view",
+      "modelType": "unknown",
+      "database": "frank",
+      "schema": "bakehouse",
+      "path": "models\\bronze\\bakehouse\\bh_sales_customers.sql",
+      "description": "",
+      "contractEnforced": false,
+      "rawCode": "select\r\n    customerID,\r\n    first_name,\r\n    last_name,\r\n    email_address,\r\n    phone_number,\r\n    address,\r\n    city,\r\n    state,\r\n    country,\r\n    continent,\r\n    postal_zip_code,\r\n    gender\r\nfrom {{ source(\"bakehouse\", \"sales_customers\") }}",
+      "compiledCode": "select\n    customerID,\n    first_name,\n    last_name,\n    email_address,\n    phone_number,\n    address,\n    city,\n    state,\n    country,\n    continent,\n    postal_zip_code,\n    gender\nfrom `samples`.`bakehouse`.`sales_customers`",
+      "refs": [],
+      "columns": {
+        "customerid": {
+          "columnName": "customerid",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "first_name": {
+          "columnName": "first_name",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "last_name": {
+          "columnName": "last_name",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "email_address": {
+          "columnName": "email_address",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "phone_number": {
+          "columnName": "phone_number",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "address": {
+          "columnName": "address",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "city": {
+          "columnName": "city",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "state": {
+          "columnName": "state",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "country": {
+          "columnName": "country",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "continent": {
+          "columnName": "continent",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "postal_zip_code": {
+          "columnName": "postal_zip_code",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "gender": {
+          "columnName": "gender",
+          "hasLineage": true,
+          "dataType": "string"
+        }
+      }
+    },
+    "source.bakehouse.bakehouse.sales_franchises": {
+      "id": "source.bakehouse.bakehouse.sales_franchises",
+      "name": "sales_franchises",
+      "fullName": "source.bakehouse.bakehouse.sales_franchises",
+      "nodeType": "source",
+      "materialized": "unknown",
+      "modelType": "unknown",
+      "database": "samples",
+      "schema": "bakehouse",
+      "path": "models\\bronze\\bakehouse\\bakehouse.yml",
+      "description": "",
+      "contractEnforced": null,
+      "rawCode": null,
+      "compiledCode": null,
+      "refs": [],
+      "columns": {
+        "franchiseid": {
+          "columnName": "franchiseid",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "name": {
+          "columnName": "name",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "city": {
+          "columnName": "city",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "district": {
+          "columnName": "district",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "zipcode": {
+          "columnName": "zipcode",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "country": {
+          "columnName": "country",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "size": {
+          "columnName": "size",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "longitude": {
+          "columnName": "longitude",
+          "hasLineage": true,
+          "dataType": "double"
+        },
+        "latitude": {
+          "columnName": "latitude",
+          "hasLineage": true,
+          "dataType": "double"
+        },
+        "supplierid": {
+          "columnName": "supplierid",
+          "hasLineage": true,
+          "dataType": "bigint"
+        }
+      }
+    },
+    "model.bakehouse.bh_sales_franchises": {
+      "id": "model.bakehouse.bh_sales_franchises",
+      "name": "bh_sales_franchises",
+      "fullName": "model.bakehouse.bh_sales_franchises",
+      "nodeType": "model",
+      "materialized": "view",
+      "modelType": "unknown",
+      "database": "frank",
+      "schema": "bakehouse",
+      "path": "models\\bronze\\bakehouse\\bh_sales_franchises.sql",
+      "description": "",
+      "contractEnforced": false,
+      "rawCode": "select\r\n    franchiseID,\r\n    name,\r\n    city,\r\n    district,\r\n    zipcode,\r\n    country,\r\n    size,\r\n    longitude,\r\n    latitude,\r\n    supplierID\r\nfrom {{ source(\"bakehouse\", \"sales_franchises\") }}",
+      "compiledCode": "select\n    franchiseID,\n    name,\n    city,\n    district,\n    zipcode,\n    country,\n    size,\n    longitude,\n    latitude,\n    supplierID\nfrom `samples`.`bakehouse`.`sales_franchises`",
+      "refs": [],
+      "columns": {
+        "franchiseid": {
+          "columnName": "franchiseid",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "name": {
+          "columnName": "name",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "city": {
+          "columnName": "city",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "district": {
+          "columnName": "district",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "zipcode": {
+          "columnName": "zipcode",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "country": {
+          "columnName": "country",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "size": {
+          "columnName": "size",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "longitude": {
+          "columnName": "longitude",
+          "hasLineage": true,
+          "dataType": "double"
+        },
+        "latitude": {
+          "columnName": "latitude",
+          "hasLineage": true,
+          "dataType": "double"
+        },
+        "supplierid": {
+          "columnName": "supplierid",
+          "hasLineage": true,
+          "dataType": "bigint"
+        }
+      }
+    },
+    "source.bakehouse.bakehouse.sales_suppliers": {
+      "id": "source.bakehouse.bakehouse.sales_suppliers",
+      "name": "sales_suppliers",
+      "fullName": "source.bakehouse.bakehouse.sales_suppliers",
+      "nodeType": "source",
+      "materialized": "unknown",
+      "modelType": "unknown",
+      "database": "samples",
+      "schema": "bakehouse",
+      "path": "models\\bronze\\bakehouse\\bakehouse.yml",
+      "description": "",
+      "contractEnforced": null,
+      "rawCode": null,
+      "compiledCode": null,
+      "refs": [],
+      "columns": {
+        "supplierid": {
+          "columnName": "supplierid",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "name": {
+          "columnName": "name",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "ingredient": {
+          "columnName": "ingredient",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "continent": {
+          "columnName": "continent",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "city": {
+          "columnName": "city",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "district": {
+          "columnName": "district",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "size": {
+          "columnName": "size",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "longitude": {
+          "columnName": "longitude",
+          "hasLineage": true,
+          "dataType": "double"
+        },
+        "latitude": {
+          "columnName": "latitude",
+          "hasLineage": true,
+          "dataType": "double"
+        },
+        "approved": {
+          "columnName": "approved",
+          "hasLineage": true,
+          "dataType": "string"
+        }
+      }
+    },
+    "model.bakehouse.bh_sales_suppliers": {
+      "id": "model.bakehouse.bh_sales_suppliers",
+      "name": "bh_sales_suppliers",
+      "fullName": "model.bakehouse.bh_sales_suppliers",
+      "nodeType": "model",
+      "materialized": "view",
+      "modelType": "unknown",
+      "database": "frank",
+      "schema": "bakehouse",
+      "path": "models\\bronze\\bakehouse\\bh_sales_suppliers.sql",
+      "description": "",
+      "contractEnforced": false,
+      "rawCode": "select\r\n    supplierID,\r\n    name,\r\n    ingredient,\r\n    continent,\r\n    city,\r\n    district,\r\n    size,\r\n    longitude,\r\n    latitude,\r\n    approved\r\nfrom {{ source(\"bakehouse\", \"sales_suppliers\") }}",
+      "compiledCode": "select\n    supplierID,\n    name,\n    ingredient,\n    continent,\n    city,\n    district,\n    size,\n    longitude,\n    latitude,\n    approved\nfrom `samples`.`bakehouse`.`sales_suppliers`",
+      "refs": [],
+      "columns": {
+        "supplierid": {
+          "columnName": "supplierid",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "name": {
+          "columnName": "name",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "ingredient": {
+          "columnName": "ingredient",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "continent": {
+          "columnName": "continent",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "city": {
+          "columnName": "city",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "district": {
+          "columnName": "district",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "size": {
+          "columnName": "size",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "longitude": {
+          "columnName": "longitude",
+          "hasLineage": true,
+          "dataType": "double"
+        },
+        "latitude": {
+          "columnName": "latitude",
+          "hasLineage": true,
+          "dataType": "double"
+        },
+        "approved": {
+          "columnName": "approved",
+          "hasLineage": true,
+          "dataType": "string"
+        }
+      }
+    },
+    "source.bakehouse.bakehouse.sales_transactions": {
+      "id": "source.bakehouse.bakehouse.sales_transactions",
+      "name": "sales_transactions",
+      "fullName": "source.bakehouse.bakehouse.sales_transactions",
+      "nodeType": "source",
+      "materialized": "unknown",
+      "modelType": "unknown",
+      "database": "samples",
+      "schema": "bakehouse",
+      "path": "models\\bronze\\bakehouse\\bakehouse.yml",
+      "description": "",
+      "contractEnforced": null,
+      "rawCode": null,
+      "compiledCode": null,
+      "refs": [],
+      "columns": {
+        "transactionid": {
+          "columnName": "transactionid",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "customerid": {
+          "columnName": "customerid",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "franchiseid": {
+          "columnName": "franchiseid",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "datetime": {
+          "columnName": "datetime",
+          "hasLineage": true,
+          "dataType": "timestamp"
+        },
+        "product": {
+          "columnName": "product",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "quantity": {
+          "columnName": "quantity",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "unitprice": {
+          "columnName": "unitprice",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "totalprice": {
+          "columnName": "totalprice",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "paymentmethod": {
+          "columnName": "paymentmethod",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "cardnumber": {
+          "columnName": "cardnumber",
+          "hasLineage": true,
+          "dataType": "bigint"
+        }
+      }
+    },
+    "model.bakehouse.bh_sales_transactions": {
+      "id": "model.bakehouse.bh_sales_transactions",
+      "name": "bh_sales_transactions",
+      "fullName": "model.bakehouse.bh_sales_transactions",
+      "nodeType": "model",
+      "materialized": "view",
+      "modelType": "unknown",
+      "database": "frank",
+      "schema": "bakehouse",
+      "path": "models\\bronze\\bakehouse\\bh_sales_transactions.sql",
+      "description": "",
+      "contractEnforced": false,
+      "rawCode": "select\r\n    transactionID,\r\n    customerID,\r\n    franchiseID,\r\n    dateTime,\r\n    product,\r\n    quantity,\r\n    unitPrice,\r\n    totalPrice,\r\n    paymentMethod,\r\n    cardNumber\r\nfrom {{ source(\"bakehouse\", \"sales_transactions\") }}",
+      "compiledCode": "select\n    transactionID,\n    customerID,\n    franchiseID,\n    dateTime,\n    product,\n    quantity,\n    unitPrice,\n    totalPrice,\n    paymentMethod,\n    cardNumber\nfrom `samples`.`bakehouse`.`sales_transactions`",
+      "refs": [],
+      "columns": {
+        "transactionid": {
+          "columnName": "transactionid",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "customerid": {
+          "columnName": "customerid",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "franchiseid": {
+          "columnName": "franchiseid",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "datetime": {
+          "columnName": "datetime",
+          "hasLineage": true,
+          "dataType": "timestamp"
+        },
+        "product": {
+          "columnName": "product",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "quantity": {
+          "columnName": "quantity",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "unitprice": {
+          "columnName": "unitprice",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "totalprice": {
+          "columnName": "totalprice",
+          "hasLineage": true,
+          "dataType": "bigint"
+        },
+        "paymentmethod": {
+          "columnName": "paymentmethod",
+          "hasLineage": true,
+          "dataType": "string"
+        },
+        "cardnumber": {
+          "columnName": "cardnumber",
+          "hasLineage": true,
+          "dataType": "bigint"
+        }
+      }
+    },
+    "model.bakehouse.best_customers": {
+      "id": "model.bakehouse.best_customers",
+      "name": "best_customers",
+      "fullName": "model.bakehouse.best_customers",
+      "nodeType": "model",
+      "materialized": "table",
+      "modelType": "unknown",
+      "database": "frank",
+      "schema": "bakehouse",
+      "path": "models\\silver\\best_customers\\best_customers.sql",
+      "description": "",
+      "contractEnforced": true,
+      "rawCode": "with top10 as (\r\n    select\r\n        customerID,\r\n        sum(totalPrice) as sum\r\n    from {{ ref(\"bh_sales_transactions\") }}\r\n    group by all\r\n    order by sum desc\r\n    limit 10\r\n)\r\n\r\nselect\r\n    t.customerID as customer_id,\r\n    concat_ws(\" \", c.first_name, c.last_name) as full_name,\r\n    t.sum as purchase_amount\r\nfrom top10 as t\r\nleft join {{ ref(\"bh_sales_customers\") }} as c\r\n    on (c.customerID - 1000000) = t.customerID",
+      "compiledCode": "with top10 as (\n    select\n        customerID,\n        sum(totalPrice) as sum\n    from `frank`.`bakehouse`.`bh_sales_transactions`\n    group by all\n    order by sum desc\n    limit 10\n)\n\nselect\n    t.customerID as customer_id,\n    concat_ws(\" \", c.first_name, c.last_name) as full_name,\n    t.sum as purchase_amount\nfrom top10 as t\nleft join `frank`.`bakehouse`.`bh_sales_customers` as c\n    on (c.customerID - 1000000) = t.customerID",
+      "refs": [
+        {
+          "name": "bh_sales_transactions",
+          "package": null,
+          "version": null
+        },
+        {
+          "name": "bh_sales_customers",
+          "package": null,
+          "version": null
+        }
+      ],
+      "columns": {
+        "customer_id": {
+          "columnName": "customer_id",
+          "hasLineage": true,
+          "contractType": "bigint",
+          "description": "",
+          "dataType": "bigint"
+        },
+        "full_name": {
+          "columnName": "full_name",
+          "hasLineage": true,
+          "contractType": "string",
+          "description": "",
+          "dataType": "string"
+        },
+        "purchase_amount": {
+          "columnName": "purchase_amount",
+          "hasLineage": true,
+          "contractType": "bigint",
+          "description": "",
+          "dataType": "bigint"
+        }
+      }
+    },
+    "source.bakehouse.bakehouse.media_customer_reviews": {
+      "id": "source.bakehouse.bakehouse.media_customer_reviews",
+      "name": "media_customer_reviews",
+      "fullName": "source.bakehouse.bakehouse.media_customer_reviews",
+      "nodeType": "source",
+      "materialized": "unknown",
+      "modelType": "unknown",
+      "database": "samples",
+      "schema": "bakehouse",
+      "path": "models\\bronze\\bakehouse\\bakehouse.yml",
+      "description": "",
+      "contractEnforced": null,
+      "rawCode": null,
+      "compiledCode": null,
+      "refs": [],
+      "columns": {
+        "review": {
+          "columnName": "review",
+          "hasLineage": false,
+          "dataType": "string"
+        },
+        "franchiseid": {
+          "columnName": "franchiseid",
+          "hasLineage": false,
+          "dataType": "bigint"
+        },
+        "review_date": {
+          "columnName": "review_date",
+          "hasLineage": false,
+          "dataType": "timestamp"
+        },
+        "new_id": {
+          "columnName": "new_id",
+          "hasLineage": false,
+          "dataType": "integer"
+        }
+      }
+    },
+    "source.bakehouse.bakehouse.media_gold_reviews_chunked": {
+      "id": "source.bakehouse.bakehouse.media_gold_reviews_chunked",
+      "name": "media_gold_reviews_chunked",
+      "fullName": "source.bakehouse.bakehouse.media_gold_reviews_chunked",
+      "nodeType": "source",
+      "materialized": "unknown",
+      "modelType": "unknown",
+      "database": "samples",
+      "schema": "bakehouse",
+      "path": "models\\bronze\\bakehouse\\bakehouse.yml",
+      "description": "",
+      "contractEnforced": null,
+      "rawCode": null,
+      "compiledCode": null,
+      "refs": [],
+      "columns": {
+        "franchiseid": {
+          "columnName": "franchiseid",
+          "hasLineage": false,
+          "dataType": "integer"
+        },
+        "review_date": {
+          "columnName": "review_date",
+          "hasLineage": false,
+          "dataType": "timestamp"
+        },
+        "chunked_text": {
+          "columnName": "chunked_text",
+          "hasLineage": false,
+          "dataType": "string"
+        },
+        "chunk_id": {
+          "columnName": "chunk_id",
+          "hasLineage": false,
+          "dataType": "string"
+        },
+        "review_uri": {
+          "columnName": "review_uri",
+          "hasLineage": false,
+          "dataType": "string"
+        }
+      }
+    }
+  },
+  "lineage": {
+    "edges": [
+      {
+        "id": "source.bakehouse.bakehouse.sales_customers:customerid->model.bakehouse.bh_sales_customers:customerid",
+        "source": "source.bakehouse.bakehouse.sales_customers",
+        "target": "model.bakehouse.bh_sales_customers",
+        "sourceColumn": "customerid",
+        "targetColumn": "customerid"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_customers:first_name->model.bakehouse.bh_sales_customers:first_name",
+        "source": "source.bakehouse.bakehouse.sales_customers",
+        "target": "model.bakehouse.bh_sales_customers",
+        "sourceColumn": "first_name",
+        "targetColumn": "first_name"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_customers:last_name->model.bakehouse.bh_sales_customers:last_name",
+        "source": "source.bakehouse.bakehouse.sales_customers",
+        "target": "model.bakehouse.bh_sales_customers",
+        "sourceColumn": "last_name",
+        "targetColumn": "last_name"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_customers:email_address->model.bakehouse.bh_sales_customers:email_address",
+        "source": "source.bakehouse.bakehouse.sales_customers",
+        "target": "model.bakehouse.bh_sales_customers",
+        "sourceColumn": "email_address",
+        "targetColumn": "email_address"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_customers:phone_number->model.bakehouse.bh_sales_customers:phone_number",
+        "source": "source.bakehouse.bakehouse.sales_customers",
+        "target": "model.bakehouse.bh_sales_customers",
+        "sourceColumn": "phone_number",
+        "targetColumn": "phone_number"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_customers:address->model.bakehouse.bh_sales_customers:address",
+        "source": "source.bakehouse.bakehouse.sales_customers",
+        "target": "model.bakehouse.bh_sales_customers",
+        "sourceColumn": "address",
+        "targetColumn": "address"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_customers:city->model.bakehouse.bh_sales_customers:city",
+        "source": "source.bakehouse.bakehouse.sales_customers",
+        "target": "model.bakehouse.bh_sales_customers",
+        "sourceColumn": "city",
+        "targetColumn": "city"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_customers:state->model.bakehouse.bh_sales_customers:state",
+        "source": "source.bakehouse.bakehouse.sales_customers",
+        "target": "model.bakehouse.bh_sales_customers",
+        "sourceColumn": "state",
+        "targetColumn": "state"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_customers:country->model.bakehouse.bh_sales_customers:country",
+        "source": "source.bakehouse.bakehouse.sales_customers",
+        "target": "model.bakehouse.bh_sales_customers",
+        "sourceColumn": "country",
+        "targetColumn": "country"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_customers:continent->model.bakehouse.bh_sales_customers:continent",
+        "source": "source.bakehouse.bakehouse.sales_customers",
+        "target": "model.bakehouse.bh_sales_customers",
+        "sourceColumn": "continent",
+        "targetColumn": "continent"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_customers:postal_zip_code->model.bakehouse.bh_sales_customers:postal_zip_code",
+        "source": "source.bakehouse.bakehouse.sales_customers",
+        "target": "model.bakehouse.bh_sales_customers",
+        "sourceColumn": "postal_zip_code",
+        "targetColumn": "postal_zip_code"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_customers:gender->model.bakehouse.bh_sales_customers:gender",
+        "source": "source.bakehouse.bakehouse.sales_customers",
+        "target": "model.bakehouse.bh_sales_customers",
+        "sourceColumn": "gender",
+        "targetColumn": "gender"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_franchises:franchiseid->model.bakehouse.bh_sales_franchises:franchiseid",
+        "source": "source.bakehouse.bakehouse.sales_franchises",
+        "target": "model.bakehouse.bh_sales_franchises",
+        "sourceColumn": "franchiseid",
+        "targetColumn": "franchiseid"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_franchises:name->model.bakehouse.bh_sales_franchises:name",
+        "source": "source.bakehouse.bakehouse.sales_franchises",
+        "target": "model.bakehouse.bh_sales_franchises",
+        "sourceColumn": "name",
+        "targetColumn": "name"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_franchises:city->model.bakehouse.bh_sales_franchises:city",
+        "source": "source.bakehouse.bakehouse.sales_franchises",
+        "target": "model.bakehouse.bh_sales_franchises",
+        "sourceColumn": "city",
+        "targetColumn": "city"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_franchises:district->model.bakehouse.bh_sales_franchises:district",
+        "source": "source.bakehouse.bakehouse.sales_franchises",
+        "target": "model.bakehouse.bh_sales_franchises",
+        "sourceColumn": "district",
+        "targetColumn": "district"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_franchises:zipcode->model.bakehouse.bh_sales_franchises:zipcode",
+        "source": "source.bakehouse.bakehouse.sales_franchises",
+        "target": "model.bakehouse.bh_sales_franchises",
+        "sourceColumn": "zipcode",
+        "targetColumn": "zipcode"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_franchises:country->model.bakehouse.bh_sales_franchises:country",
+        "source": "source.bakehouse.bakehouse.sales_franchises",
+        "target": "model.bakehouse.bh_sales_franchises",
+        "sourceColumn": "country",
+        "targetColumn": "country"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_franchises:size->model.bakehouse.bh_sales_franchises:size",
+        "source": "source.bakehouse.bakehouse.sales_franchises",
+        "target": "model.bakehouse.bh_sales_franchises",
+        "sourceColumn": "size",
+        "targetColumn": "size"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_franchises:longitude->model.bakehouse.bh_sales_franchises:longitude",
+        "source": "source.bakehouse.bakehouse.sales_franchises",
+        "target": "model.bakehouse.bh_sales_franchises",
+        "sourceColumn": "longitude",
+        "targetColumn": "longitude"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_franchises:latitude->model.bakehouse.bh_sales_franchises:latitude",
+        "source": "source.bakehouse.bakehouse.sales_franchises",
+        "target": "model.bakehouse.bh_sales_franchises",
+        "sourceColumn": "latitude",
+        "targetColumn": "latitude"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_franchises:supplierid->model.bakehouse.bh_sales_franchises:supplierid",
+        "source": "source.bakehouse.bakehouse.sales_franchises",
+        "target": "model.bakehouse.bh_sales_franchises",
+        "sourceColumn": "supplierid",
+        "targetColumn": "supplierid"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_suppliers:supplierid->model.bakehouse.bh_sales_suppliers:supplierid",
+        "source": "source.bakehouse.bakehouse.sales_suppliers",
+        "target": "model.bakehouse.bh_sales_suppliers",
+        "sourceColumn": "supplierid",
+        "targetColumn": "supplierid"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_suppliers:name->model.bakehouse.bh_sales_suppliers:name",
+        "source": "source.bakehouse.bakehouse.sales_suppliers",
+        "target": "model.bakehouse.bh_sales_suppliers",
+        "sourceColumn": "name",
+        "targetColumn": "name"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_suppliers:ingredient->model.bakehouse.bh_sales_suppliers:ingredient",
+        "source": "source.bakehouse.bakehouse.sales_suppliers",
+        "target": "model.bakehouse.bh_sales_suppliers",
+        "sourceColumn": "ingredient",
+        "targetColumn": "ingredient"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_suppliers:continent->model.bakehouse.bh_sales_suppliers:continent",
+        "source": "source.bakehouse.bakehouse.sales_suppliers",
+        "target": "model.bakehouse.bh_sales_suppliers",
+        "sourceColumn": "continent",
+        "targetColumn": "continent"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_suppliers:city->model.bakehouse.bh_sales_suppliers:city",
+        "source": "source.bakehouse.bakehouse.sales_suppliers",
+        "target": "model.bakehouse.bh_sales_suppliers",
+        "sourceColumn": "city",
+        "targetColumn": "city"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_suppliers:district->model.bakehouse.bh_sales_suppliers:district",
+        "source": "source.bakehouse.bakehouse.sales_suppliers",
+        "target": "model.bakehouse.bh_sales_suppliers",
+        "sourceColumn": "district",
+        "targetColumn": "district"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_suppliers:size->model.bakehouse.bh_sales_suppliers:size",
+        "source": "source.bakehouse.bakehouse.sales_suppliers",
+        "target": "model.bakehouse.bh_sales_suppliers",
+        "sourceColumn": "size",
+        "targetColumn": "size"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_suppliers:longitude->model.bakehouse.bh_sales_suppliers:longitude",
+        "source": "source.bakehouse.bakehouse.sales_suppliers",
+        "target": "model.bakehouse.bh_sales_suppliers",
+        "sourceColumn": "longitude",
+        "targetColumn": "longitude"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_suppliers:latitude->model.bakehouse.bh_sales_suppliers:latitude",
+        "source": "source.bakehouse.bakehouse.sales_suppliers",
+        "target": "model.bakehouse.bh_sales_suppliers",
+        "sourceColumn": "latitude",
+        "targetColumn": "latitude"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_suppliers:approved->model.bakehouse.bh_sales_suppliers:approved",
+        "source": "source.bakehouse.bakehouse.sales_suppliers",
+        "target": "model.bakehouse.bh_sales_suppliers",
+        "sourceColumn": "approved",
+        "targetColumn": "approved"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_transactions:transactionid->model.bakehouse.bh_sales_transactions:transactionid",
+        "source": "source.bakehouse.bakehouse.sales_transactions",
+        "target": "model.bakehouse.bh_sales_transactions",
+        "sourceColumn": "transactionid",
+        "targetColumn": "transactionid"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_transactions:customerid->model.bakehouse.bh_sales_transactions:customerid",
+        "source": "source.bakehouse.bakehouse.sales_transactions",
+        "target": "model.bakehouse.bh_sales_transactions",
+        "sourceColumn": "customerid",
+        "targetColumn": "customerid"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_transactions:franchiseid->model.bakehouse.bh_sales_transactions:franchiseid",
+        "source": "source.bakehouse.bakehouse.sales_transactions",
+        "target": "model.bakehouse.bh_sales_transactions",
+        "sourceColumn": "franchiseid",
+        "targetColumn": "franchiseid"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_transactions:datetime->model.bakehouse.bh_sales_transactions:datetime",
+        "source": "source.bakehouse.bakehouse.sales_transactions",
+        "target": "model.bakehouse.bh_sales_transactions",
+        "sourceColumn": "datetime",
+        "targetColumn": "datetime"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_transactions:product->model.bakehouse.bh_sales_transactions:product",
+        "source": "source.bakehouse.bakehouse.sales_transactions",
+        "target": "model.bakehouse.bh_sales_transactions",
+        "sourceColumn": "product",
+        "targetColumn": "product"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_transactions:quantity->model.bakehouse.bh_sales_transactions:quantity",
+        "source": "source.bakehouse.bakehouse.sales_transactions",
+        "target": "model.bakehouse.bh_sales_transactions",
+        "sourceColumn": "quantity",
+        "targetColumn": "quantity"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_transactions:unitprice->model.bakehouse.bh_sales_transactions:unitprice",
+        "source": "source.bakehouse.bakehouse.sales_transactions",
+        "target": "model.bakehouse.bh_sales_transactions",
+        "sourceColumn": "unitprice",
+        "targetColumn": "unitprice"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_transactions:totalprice->model.bakehouse.bh_sales_transactions:totalprice",
+        "source": "source.bakehouse.bakehouse.sales_transactions",
+        "target": "model.bakehouse.bh_sales_transactions",
+        "sourceColumn": "totalprice",
+        "targetColumn": "totalprice"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_transactions:paymentmethod->model.bakehouse.bh_sales_transactions:paymentmethod",
+        "source": "source.bakehouse.bakehouse.sales_transactions",
+        "target": "model.bakehouse.bh_sales_transactions",
+        "sourceColumn": "paymentmethod",
+        "targetColumn": "paymentmethod"
+      },
+      {
+        "id": "source.bakehouse.bakehouse.sales_transactions:cardnumber->model.bakehouse.bh_sales_transactions:cardnumber",
+        "source": "source.bakehouse.bakehouse.sales_transactions",
+        "target": "model.bakehouse.bh_sales_transactions",
+        "sourceColumn": "cardnumber",
+        "targetColumn": "cardnumber"
+      },
+      {
+        "id": "model.bakehouse.bh_sales_transactions:customerid->model.bakehouse.best_customers:customer_id",
+        "source": "model.bakehouse.bh_sales_transactions",
+        "target": "model.bakehouse.best_customers",
+        "sourceColumn": "customerid",
+        "targetColumn": "customer_id"
+      },
+      {
+        "id": "model.bakehouse.bh_sales_customers:first_name->model.bakehouse.best_customers:full_name",
+        "source": "model.bakehouse.bh_sales_customers",
+        "target": "model.bakehouse.best_customers",
+        "sourceColumn": "first_name",
+        "targetColumn": "full_name"
+      },
+      {
+        "id": "model.bakehouse.bh_sales_customers:last_name->model.bakehouse.best_customers:full_name",
+        "source": "model.bakehouse.bh_sales_customers",
+        "target": "model.bakehouse.best_customers",
+        "sourceColumn": "last_name",
+        "targetColumn": "full_name"
+      },
+      {
+        "id": "model.bakehouse.bh_sales_transactions:totalprice->model.bakehouse.best_customers:purchase_amount",
+        "source": "model.bakehouse.bh_sales_transactions",
+        "target": "model.bakehouse.best_customers",
+        "sourceColumn": "totalprice",
+        "targetColumn": "purchase_amount"
+      },
+      {
+        "id": "model.bakehouse.bh_sales_transactions::->model.bakehouse.best_customers::",
+        "source": "model.bakehouse.bh_sales_transactions",
+        "target": "model.bakehouse.best_customers",
+        "sourceColumn": "",
+        "targetColumn": ""
+      },
+      {
+        "id": "model.bakehouse.bh_sales_customers::->model.bakehouse.best_customers::",
+        "source": "model.bakehouse.bh_sales_customers",
+        "target": "model.bakehouse.best_customers",
+        "sourceColumn": "",
+        "targetColumn": ""
+      }
+    ],
+    "parents": {
+      "model.bakehouse.bh_sales_customers": {
+        "customerid": [
+          {
+            "column": "customerid",
+            "dbt_node": "source.bakehouse.bakehouse.sales_customers"
+          }
+        ],
+        "first_name": [
+          {
+            "column": "first_name",
+            "dbt_node": "source.bakehouse.bakehouse.sales_customers"
+          }
+        ],
+        "last_name": [
+          {
+            "column": "last_name",
+            "dbt_node": "source.bakehouse.bakehouse.sales_customers"
+          }
+        ],
+        "email_address": [
+          {
+            "column": "email_address",
+            "dbt_node": "source.bakehouse.bakehouse.sales_customers"
+          }
+        ],
+        "phone_number": [
+          {
+            "column": "phone_number",
+            "dbt_node": "source.bakehouse.bakehouse.sales_customers"
+          }
+        ],
+        "address": [
+          {
+            "column": "address",
+            "dbt_node": "source.bakehouse.bakehouse.sales_customers"
+          }
+        ],
+        "city": [
+          {
+            "column": "city",
+            "dbt_node": "source.bakehouse.bakehouse.sales_customers"
+          }
+        ],
+        "state": [
+          {
+            "column": "state",
+            "dbt_node": "source.bakehouse.bakehouse.sales_customers"
+          }
+        ],
+        "country": [
+          {
+            "column": "country",
+            "dbt_node": "source.bakehouse.bakehouse.sales_customers"
+          }
+        ],
+        "continent": [
+          {
+            "column": "continent",
+            "dbt_node": "source.bakehouse.bakehouse.sales_customers"
+          }
+        ],
+        "postal_zip_code": [
+          {
+            "column": "postal_zip_code",
+            "dbt_node": "source.bakehouse.bakehouse.sales_customers"
+          }
+        ],
+        "gender": [
+          {
+            "column": "gender",
+            "dbt_node": "source.bakehouse.bakehouse.sales_customers"
+          }
+        ]
+      },
+      "model.bakehouse.bh_sales_franchises": {
+        "franchiseid": [
+          {
+            "column": "franchiseid",
+            "dbt_node": "source.bakehouse.bakehouse.sales_franchises"
+          }
+        ],
+        "name": [
+          {
+            "column": "name",
+            "dbt_node": "source.bakehouse.bakehouse.sales_franchises"
+          }
+        ],
+        "city": [
+          {
+            "column": "city",
+            "dbt_node": "source.bakehouse.bakehouse.sales_franchises"
+          }
+        ],
+        "district": [
+          {
+            "column": "district",
+            "dbt_node": "source.bakehouse.bakehouse.sales_franchises"
+          }
+        ],
+        "zipcode": [
+          {
+            "column": "zipcode",
+            "dbt_node": "source.bakehouse.bakehouse.sales_franchises"
+          }
+        ],
+        "country": [
+          {
+            "column": "country",
+            "dbt_node": "source.bakehouse.bakehouse.sales_franchises"
+          }
+        ],
+        "size": [
+          {
+            "column": "size",
+            "dbt_node": "source.bakehouse.bakehouse.sales_franchises"
+          }
+        ],
+        "longitude": [
+          {
+            "column": "longitude",
+            "dbt_node": "source.bakehouse.bakehouse.sales_franchises"
+          }
+        ],
+        "latitude": [
+          {
+            "column": "latitude",
+            "dbt_node": "source.bakehouse.bakehouse.sales_franchises"
+          }
+        ],
+        "supplierid": [
+          {
+            "column": "supplierid",
+            "dbt_node": "source.bakehouse.bakehouse.sales_franchises"
+          }
+        ]
+      },
+      "model.bakehouse.bh_sales_suppliers": {
+        "supplierid": [
+          {
+            "column": "supplierid",
+            "dbt_node": "source.bakehouse.bakehouse.sales_suppliers"
+          }
+        ],
+        "name": [
+          {
+            "column": "name",
+            "dbt_node": "source.bakehouse.bakehouse.sales_suppliers"
+          }
+        ],
+        "ingredient": [
+          {
+            "column": "ingredient",
+            "dbt_node": "source.bakehouse.bakehouse.sales_suppliers"
+          }
+        ],
+        "continent": [
+          {
+            "column": "continent",
+            "dbt_node": "source.bakehouse.bakehouse.sales_suppliers"
+          }
+        ],
+        "city": [
+          {
+            "column": "city",
+            "dbt_node": "source.bakehouse.bakehouse.sales_suppliers"
+          }
+        ],
+        "district": [
+          {
+            "column": "district",
+            "dbt_node": "source.bakehouse.bakehouse.sales_suppliers"
+          }
+        ],
+        "size": [
+          {
+            "column": "size",
+            "dbt_node": "source.bakehouse.bakehouse.sales_suppliers"
+          }
+        ],
+        "longitude": [
+          {
+            "column": "longitude",
+            "dbt_node": "source.bakehouse.bakehouse.sales_suppliers"
+          }
+        ],
+        "latitude": [
+          {
+            "column": "latitude",
+            "dbt_node": "source.bakehouse.bakehouse.sales_suppliers"
+          }
+        ],
+        "approved": [
+          {
+            "column": "approved",
+            "dbt_node": "source.bakehouse.bakehouse.sales_suppliers"
+          }
+        ]
+      },
+      "model.bakehouse.bh_sales_transactions": {
+        "transactionid": [
+          {
+            "column": "transactionid",
+            "dbt_node": "source.bakehouse.bakehouse.sales_transactions"
+          }
+        ],
+        "customerid": [
+          {
+            "column": "customerid",
+            "dbt_node": "source.bakehouse.bakehouse.sales_transactions"
+          }
+        ],
+        "franchiseid": [
+          {
+            "column": "franchiseid",
+            "dbt_node": "source.bakehouse.bakehouse.sales_transactions"
+          }
+        ],
+        "datetime": [
+          {
+            "column": "datetime",
+            "dbt_node": "source.bakehouse.bakehouse.sales_transactions"
+          }
+        ],
+        "product": [
+          {
+            "column": "product",
+            "dbt_node": "source.bakehouse.bakehouse.sales_transactions"
+          }
+        ],
+        "quantity": [
+          {
+            "column": "quantity",
+            "dbt_node": "source.bakehouse.bakehouse.sales_transactions"
+          }
+        ],
+        "unitprice": [
+          {
+            "column": "unitprice",
+            "dbt_node": "source.bakehouse.bakehouse.sales_transactions"
+          }
+        ],
+        "totalprice": [
+          {
+            "column": "totalprice",
+            "dbt_node": "source.bakehouse.bakehouse.sales_transactions"
+          }
+        ],
+        "paymentmethod": [
+          {
+            "column": "paymentmethod",
+            "dbt_node": "source.bakehouse.bakehouse.sales_transactions"
+          }
+        ],
+        "cardnumber": [
+          {
+            "column": "cardnumber",
+            "dbt_node": "source.bakehouse.bakehouse.sales_transactions"
+          }
+        ]
+      },
+      "model.bakehouse.best_customers": {
+        "customer_id": [
+          {
+            "column": "customerid",
+            "dbt_node": "model.bakehouse.bh_sales_transactions"
+          }
+        ],
+        "full_name": [
+          {
+            "column": "first_name",
+            "dbt_node": "model.bakehouse.bh_sales_customers"
+          },
+          {
+            "column": "last_name",
+            "dbt_node": "model.bakehouse.bh_sales_customers"
+          }
+        ],
+        "purchase_amount": [
+          {
+            "column": "totalprice",
+            "dbt_node": "model.bakehouse.bh_sales_transactions"
+          }
+        ]
+      }
+    },
+    "children": {
+      "source.bakehouse.bakehouse.sales_customers": {
+        "customerid": [
+          {
+            "column": "customerid",
+            "dbt_node": "model.bakehouse.bh_sales_customers"
+          }
+        ],
+        "first_name": [
+          {
+            "column": "first_name",
+            "dbt_node": "model.bakehouse.bh_sales_customers"
+          }
+        ],
+        "last_name": [
+          {
+            "column": "last_name",
+            "dbt_node": "model.bakehouse.bh_sales_customers"
+          }
+        ],
+        "email_address": [
+          {
+            "column": "email_address",
+            "dbt_node": "model.bakehouse.bh_sales_customers"
+          }
+        ],
+        "phone_number": [
+          {
+            "column": "phone_number",
+            "dbt_node": "model.bakehouse.bh_sales_customers"
+          }
+        ],
+        "address": [
+          {
+            "column": "address",
+            "dbt_node": "model.bakehouse.bh_sales_customers"
+          }
+        ],
+        "city": [
+          {
+            "column": "city",
+            "dbt_node": "model.bakehouse.bh_sales_customers"
+          }
+        ],
+        "state": [
+          {
+            "column": "state",
+            "dbt_node": "model.bakehouse.bh_sales_customers"
+          }
+        ],
+        "country": [
+          {
+            "column": "country",
+            "dbt_node": "model.bakehouse.bh_sales_customers"
+          }
+        ],
+        "continent": [
+          {
+            "column": "continent",
+            "dbt_node": "model.bakehouse.bh_sales_customers"
+          }
+        ],
+        "postal_zip_code": [
+          {
+            "column": "postal_zip_code",
+            "dbt_node": "model.bakehouse.bh_sales_customers"
+          }
+        ],
+        "gender": [
+          {
+            "column": "gender",
+            "dbt_node": "model.bakehouse.bh_sales_customers"
+          }
+        ]
+      },
+      "source.bakehouse.bakehouse.sales_franchises": {
+        "franchiseid": [
+          {
+            "column": "franchiseid",
+            "dbt_node": "model.bakehouse.bh_sales_franchises"
+          }
+        ],
+        "name": [
+          {
+            "column": "name",
+            "dbt_node": "model.bakehouse.bh_sales_franchises"
+          }
+        ],
+        "city": [
+          {
+            "column": "city",
+            "dbt_node": "model.bakehouse.bh_sales_franchises"
+          }
+        ],
+        "district": [
+          {
+            "column": "district",
+            "dbt_node": "model.bakehouse.bh_sales_franchises"
+          }
+        ],
+        "zipcode": [
+          {
+            "column": "zipcode",
+            "dbt_node": "model.bakehouse.bh_sales_franchises"
+          }
+        ],
+        "country": [
+          {
+            "column": "country",
+            "dbt_node": "model.bakehouse.bh_sales_franchises"
+          }
+        ],
+        "size": [
+          {
+            "column": "size",
+            "dbt_node": "model.bakehouse.bh_sales_franchises"
+          }
+        ],
+        "longitude": [
+          {
+            "column": "longitude",
+            "dbt_node": "model.bakehouse.bh_sales_franchises"
+          }
+        ],
+        "latitude": [
+          {
+            "column": "latitude",
+            "dbt_node": "model.bakehouse.bh_sales_franchises"
+          }
+        ],
+        "supplierid": [
+          {
+            "column": "supplierid",
+            "dbt_node": "model.bakehouse.bh_sales_franchises"
+          }
+        ]
+      },
+      "source.bakehouse.bakehouse.sales_suppliers": {
+        "supplierid": [
+          {
+            "column": "supplierid",
+            "dbt_node": "model.bakehouse.bh_sales_suppliers"
+          }
+        ],
+        "name": [
+          {
+            "column": "name",
+            "dbt_node": "model.bakehouse.bh_sales_suppliers"
+          }
+        ],
+        "ingredient": [
+          {
+            "column": "ingredient",
+            "dbt_node": "model.bakehouse.bh_sales_suppliers"
+          }
+        ],
+        "continent": [
+          {
+            "column": "continent",
+            "dbt_node": "model.bakehouse.bh_sales_suppliers"
+          }
+        ],
+        "city": [
+          {
+            "column": "city",
+            "dbt_node": "model.bakehouse.bh_sales_suppliers"
+          }
+        ],
+        "district": [
+          {
+            "column": "district",
+            "dbt_node": "model.bakehouse.bh_sales_suppliers"
+          }
+        ],
+        "size": [
+          {
+            "column": "size",
+            "dbt_node": "model.bakehouse.bh_sales_suppliers"
+          }
+        ],
+        "longitude": [
+          {
+            "column": "longitude",
+            "dbt_node": "model.bakehouse.bh_sales_suppliers"
+          }
+        ],
+        "latitude": [
+          {
+            "column": "latitude",
+            "dbt_node": "model.bakehouse.bh_sales_suppliers"
+          }
+        ],
+        "approved": [
+          {
+            "column": "approved",
+            "dbt_node": "model.bakehouse.bh_sales_suppliers"
+          }
+        ]
+      },
+      "source.bakehouse.bakehouse.sales_transactions": {
+        "transactionid": [
+          {
+            "column": "transactionid",
+            "dbt_node": "model.bakehouse.bh_sales_transactions"
+          }
+        ],
+        "customerid": [
+          {
+            "column": "customerid",
+            "dbt_node": "model.bakehouse.bh_sales_transactions"
+          }
+        ],
+        "franchiseid": [
+          {
+            "column": "franchiseid",
+            "dbt_node": "model.bakehouse.bh_sales_transactions"
+          }
+        ],
+        "datetime": [
+          {
+            "column": "datetime",
+            "dbt_node": "model.bakehouse.bh_sales_transactions"
+          }
+        ],
+        "product": [
+          {
+            "column": "product",
+            "dbt_node": "model.bakehouse.bh_sales_transactions"
+          }
+        ],
+        "quantity": [
+          {
+            "column": "quantity",
+            "dbt_node": "model.bakehouse.bh_sales_transactions"
+          }
+        ],
+        "unitprice": [
+          {
+            "column": "unitprice",
+            "dbt_node": "model.bakehouse.bh_sales_transactions"
+          }
+        ],
+        "totalprice": [
+          {
+            "column": "totalprice",
+            "dbt_node": "model.bakehouse.bh_sales_transactions"
+          }
+        ],
+        "paymentmethod": [
+          {
+            "column": "paymentmethod",
+            "dbt_node": "model.bakehouse.bh_sales_transactions"
+          }
+        ],
+        "cardnumber": [
+          {
+            "column": "cardnumber",
+            "dbt_node": "model.bakehouse.bh_sales_transactions"
+          }
+        ]
+      },
+      "model.bakehouse.bh_sales_transactions": {
+        "customerid": [
+          {
+            "column": "customer_id",
+            "dbt_node": "model.bakehouse.best_customers"
+          }
+        ],
+        "totalprice": [
+          {
+            "column": "purchase_amount",
+            "dbt_node": "model.bakehouse.best_customers"
+          }
+        ]
+      },
+      "model.bakehouse.bh_sales_customers": {
+        "first_name": [
+          {
+            "column": "full_name",
+            "dbt_node": "model.bakehouse.best_customers"
+          }
+        ],
+        "last_name": [
+          {
+            "column": "full_name",
+            "dbt_node": "model.bakehouse.best_customers"
+          }
+        ]
+      }
+    }
+  },
+  "tree": {
+    "byDatabase": {
+      "samples": {
+        "bakehouse": [
+          "source.bakehouse.bakehouse.media_customer_reviews",
+          "source.bakehouse.bakehouse.media_gold_reviews_chunked",
+          "source.bakehouse.bakehouse.sales_customers",
+          "source.bakehouse.bakehouse.sales_franchises",
+          "source.bakehouse.bakehouse.sales_suppliers",
+          "source.bakehouse.bakehouse.sales_transactions"
+        ]
+      },
+      "frank": {
+        "bakehouse": [
+          "model.bakehouse.best_customers",
+          "model.bakehouse.bh_sales_customers",
+          "model.bakehouse.bh_sales_franchises",
+          "model.bakehouse.bh_sales_suppliers",
+          "model.bakehouse.bh_sales_transactions"
+        ]
+      }
+    },
+    "byPath": {
+      "models": {
+        "bronze": {
+          "bakehouse": {
+            "__items__": [
+              "model.bakehouse.bh_sales_customers",
+              "model.bakehouse.bh_sales_franchises",
+              "model.bakehouse.bh_sales_suppliers",
+              "model.bakehouse.bh_sales_transactions",
+              "source.bakehouse.bakehouse.media_customer_reviews",
+              "source.bakehouse.bakehouse.media_gold_reviews_chunked",
+              "source.bakehouse.bakehouse.sales_customers",
+              "source.bakehouse.bakehouse.sales_franchises",
+              "source.bakehouse.bakehouse.sales_suppliers",
+              "source.bakehouse.bakehouse.sales_transactions"
+            ]
+          }
+        },
+        "silver": {
+          "best_customers": {
+            "__items__": [
+              "model.bakehouse.best_customers"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
