@@ -1,0 +1,2 @@
+# dbt-bakehouse
+Demo project
