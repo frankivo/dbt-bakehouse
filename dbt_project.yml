@@ -19,3 +19,5 @@ models:
   bakehouse:
     bronze:
       +materialized: view
+    silver:
+      +materialized: table

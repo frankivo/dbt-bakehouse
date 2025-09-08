@@ -1,0 +1,24 @@
+models:
+  - name: best_customers
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: customer_id
+        data_type: bigint
+        constraints:
+          - type: not_null
+          - type: primary_key
+        data_tests:
+          - unique
+
+      - name: full_name
+        data_type: string
+        constraints:
+          - type: not_null
+
+      - name: purchase_amount
+        data_type: bigint
+        constraints:
+          - type: not_null
